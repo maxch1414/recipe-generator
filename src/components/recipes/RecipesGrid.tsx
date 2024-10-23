@@ -9,9 +9,9 @@ type Props = {
 };
 
 export function RecipesGrid({ recipes }: Readonly<Props>) {
-  //   const [selectedArea, setSelectedArea] = useState("all");
-  //   const [selectedCategory, setSelectedCategory] = useState("all");
   const [searchQuery, setSearchQuery] = useState("");
+
+  if (!recipes.length) return;
 
   const filteredRecipes = recipes.filter(
     (recipe) =>
@@ -43,7 +43,7 @@ export function RecipesGrid({ recipes }: Readonly<Props>) {
           </div>
         </div>
       ) : (
-        <p>No recipes found.</p>
+        <p className="text-center text-lg">No recipes found.</p>
       )}
     </div>
   );
