@@ -23,7 +23,7 @@ export const RecipeSearch = ({ ingredients }: RecipeSearchProps) => {
   };
 
   return (
-    <div className="">
+    <div>
       <IngredientForm ingredients={ingredients} onSubmit={fetchRecipes} />
       <div className="mt-4">
         <RecipesGrid recipes={recipes} />

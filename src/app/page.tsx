@@ -1,7 +1,8 @@
+import React from "react";
 import { getIngredients } from "./actions/ingredients";
 import { RecipeSearch } from "@/components/recipes/RecipeSearch";
 
-export default async function HomePage() {
+export default async function Home() {
   const ingredients = await getIngredients();
 
   return (

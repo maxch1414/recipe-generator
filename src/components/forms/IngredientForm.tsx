@@ -26,7 +26,7 @@ export const IngredientForm = ({
     label: ingredient.strIngredient,
   }));
 
-  const handles: SubmitHandler<FormValues> = (data) => {
+  const handleFormSubmit: SubmitHandler<FormValues> = (data) => {
     onSubmit(data.ingredientSearch.label);
   };
 
@@ -37,7 +37,10 @@ export const IngredientForm = ({
 
   return (
     <div className="flex justify-center items-center w-full px-4 py-8">
-      <form onSubmit={handleSubmit(handles)} className="w-full max-w-md">
+      <form
+        onSubmit={handleSubmit(handleFormSubmit)}
+        className="w-full max-w-md"
+      >
         <Controller
           name="ingredientSearch"
           control={control}
@@ -45,7 +48,7 @@ export const IngredientForm = ({
             <Select
               {...field}
               options={ingredientOptions}
-              placeholder="Search Ingredients"
+              placeholder="Search Ingredient"
               onChange={(selectedOption) => field.onChange(selectedOption)}
               instanceId="ingredient-select"
             />

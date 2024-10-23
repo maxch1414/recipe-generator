@@ -1,0 +1,206 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Renders a recipe search correctly 1`] = `
+<div>
+  <div>
+    <div
+      class="flex justify-center items-center w-full px-4 py-8"
+    >
+      <form
+        class="w-full max-w-md"
+      >
+        <div
+          class="css-b62m3t-container"
+        >
+          <span
+            class="css-1f43avz-a11yText-A11yText"
+            id="react-select-ingredient-select-live-region"
+          />
+          <span
+            aria-atomic="false"
+            aria-live="polite"
+            aria-relevant="additions text"
+            class="css-1f43avz-a11yText-A11yText"
+            role="log"
+          />
+          <div
+            class="css-13cymwt-control"
+          >
+            <div
+              class="css-hlgwow"
+            >
+              <div
+                class="css-1dimb5e-singleValue"
+              >
+                Test Ingredient
+              </div>
+              <div
+                class="css-19bb58m"
+                data-value=""
+              >
+                <input
+                  aria-activedescendant=""
+                  aria-autocomplete="list"
+                  aria-expanded="false"
+                  aria-haspopup="true"
+                  autocapitalize="none"
+                  autocomplete="off"
+                  autocorrect="off"
+                  class=""
+                  id="react-select-ingredient-select-input"
+                  role="combobox"
+                  spellcheck="false"
+                  style="opacity: 0; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
+                  tabindex="0"
+                  type="text"
+                  value=""
+                />
+              </div>
+            </div>
+            <div
+              class="css-1wy0on6"
+            >
+              <span
+                class="css-1u9des2-indicatorSeparator"
+              />
+              <div
+                aria-hidden="true"
+                class="css-1xc3v61-indicatorContainer"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="css-tj5bde-Svg"
+                  focusable="false"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  width="20"
+                >
+                  <path
+                    d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <input
+            name="ingredientSearch"
+            type="hidden"
+            value="1"
+          />
+        </div>
+        <button
+          class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-primary-foreground shadow hover:bg-primary/90 h-9 px-4 py-2 w-full mt-2"
+          type="submit"
+        >
+          Submit
+        </button>
+      </form>
+    </div>
+    <div
+      class="mt-4"
+    >
+      <div>
+        <div>
+          <div
+            class="relative"
+          >
+            <input
+              class="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-sm shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 pl-10"
+              placeholder="Search recipes"
+              type="text"
+              value=""
+            />
+            <svg
+              class="lucide lucide-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"
+              fill="none"
+              height="20"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle
+                cx="11"
+                cy="11"
+                r="8"
+              />
+              <path
+                d="m21 21-4.3-4.3"
+              />
+            </svg>
+          </div>
+          <div
+            class="mt-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
+          >
+            <div
+              class="rounded-xl border bg-card text-card-foreground shadow overflow-hidden"
+              role="griditem"
+            >
+              <div
+                class="flex flex-col space-y-1.5 p-0"
+              >
+                <div
+                  class="relative h-48 w-full"
+                >
+                  <img
+                    alt="Test Recipe"
+                    class="object-cover"
+                    data-nimg="fill"
+                    decoding="async"
+                    loading="lazy"
+                    src="logo.svg"
+                    style="position: absolute; height: 100%; width: 100%; left: 0px; top: 0px; right: 0px; bottom: 0px; color: transparent;"
+                  />
+                </div>
+              </div>
+              <div
+                class="p-4"
+              >
+                <h3
+                  class="tracking-tight text-xl font-semibold line-clamp-2"
+                >
+                  Test Recipe
+                </h3>
+              </div>
+            </div>
+            <div
+              class="rounded-xl border bg-card text-card-foreground shadow overflow-hidden"
+              role="griditem"
+            >
+              <div
+                class="flex flex-col space-y-1.5 p-0"
+              >
+                <div
+                  class="relative h-48 w-full"
+                >
+                  <img
+                    alt="Test Recipe 2"
+                    class="object-cover"
+                    data-nimg="fill"
+                    decoding="async"
+                    loading="lazy"
+                    src="logo.svg"
+                    style="position: absolute; height: 100%; width: 100%; left: 0px; top: 0px; right: 0px; bottom: 0px; color: transparent;"
+                  />
+                </div>
+              </div>
+              <div
+                class="p-4"
+              >
+                <h3
+                  class="tracking-tight text-xl font-semibold line-clamp-2"
+                >
+                  Test Recipe 2
+                </h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
