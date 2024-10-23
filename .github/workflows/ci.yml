@@ -39,3 +39,8 @@ jobs:
         with:
           files: |
             coverage/junit-report.xml
+
+      - name: Publish Code Coverage
+        uses: irongut/CodeCoverageSummary@v1.3.0
+        with:
+          filename: coverage.cobertura.xml
