@@ -21,7 +21,17 @@ jobs:
           node-version: "20"
 
       - name: Bun Install
+        run: npm install -g bun
+
+      - name: Bun Install
         run: bun install
 
       - name: Run unit tests
         run: bun run test
+
+      - name: Publish Test Results
+      uses: EnricoMi/publish-unit-test-result-action@v2
+        if: always()
+        with:
+          files: |
+            coverage/junit-report.xml
