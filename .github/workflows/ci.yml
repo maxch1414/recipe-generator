@@ -31,7 +31,7 @@ jobs:
         run: bun install
 
       - name: Run unit tests
-        run: bun run test
+        run: bun run test:ci
 
       - name: Publish Test Results
         uses: EnricoMi/publish-unit-test-result-action@v2
@@ -43,4 +43,4 @@ jobs:
       - name: Publish Code Coverage
         uses: irongut/CodeCoverageSummary@v1.3.0
         with:
-          filename: coverage.cobertura.xml
+          filename: coverage/coverage.cobertura.xml
