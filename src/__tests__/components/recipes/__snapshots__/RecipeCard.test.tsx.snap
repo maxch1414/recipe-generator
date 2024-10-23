@@ -1,0 +1,37 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Renders a recipe card correctly 1`] = `
+<div>
+  <div
+    class="rounded-xl border bg-card text-card-foreground shadow overflow-hidden"
+    role="griditem"
+  >
+    <div
+      class="flex flex-col space-y-1.5 p-0"
+    >
+      <div
+        class="relative h-48 w-full"
+      >
+        <img
+          alt="Test Recipe"
+          class="object-cover"
+          data-nimg="fill"
+          decoding="async"
+          loading="lazy"
+          src="logo.svg"
+          style="position: absolute; height: 100%; width: 100%; left: 0px; top: 0px; right: 0px; bottom: 0px; color: transparent;"
+        />
+      </div>
+    </div>
+    <div
+      class="p-4"
+    >
+      <h3
+        class="tracking-tight text-xl font-semibold line-clamp-2"
+      >
+        Test Recipe
+      </h3>
+    </div>
+  </div>
+</div>
+`;

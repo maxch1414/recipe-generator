@@ -1,0 +1,107 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Renders the recipes grid correctly 1`] = `
+<div>
+  <div>
+    <div>
+      <div
+        class="relative"
+      >
+        <input
+          class="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-sm shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 pl-10"
+          placeholder="Search recipes"
+          type="text"
+          value=""
+        />
+        <svg
+          class="lucide lucide-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"
+          fill="none"
+          height="20"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          width="20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <circle
+            cx="11"
+            cy="11"
+            r="8"
+          />
+          <path
+            d="m21 21-4.3-4.3"
+          />
+        </svg>
+      </div>
+      <div
+        class="mt-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
+      >
+        <div
+          class="rounded-xl border bg-card text-card-foreground shadow overflow-hidden"
+          role="griditem"
+        >
+          <div
+            class="flex flex-col space-y-1.5 p-0"
+          >
+            <div
+              class="relative h-48 w-full"
+            >
+              <img
+                alt="Test Recipe"
+                class="object-cover"
+                data-nimg="fill"
+                decoding="async"
+                loading="lazy"
+                src="logo.svg"
+                style="position: absolute; height: 100%; width: 100%; left: 0px; top: 0px; right: 0px; bottom: 0px; color: transparent;"
+              />
+            </div>
+          </div>
+          <div
+            class="p-4"
+          >
+            <h3
+              class="tracking-tight text-xl font-semibold line-clamp-2"
+            >
+              Test Recipe
+            </h3>
+          </div>
+        </div>
+        <div
+          class="rounded-xl border bg-card text-card-foreground shadow overflow-hidden"
+          role="griditem"
+        >
+          <div
+            class="flex flex-col space-y-1.5 p-0"
+          >
+            <div
+              class="relative h-48 w-full"
+            >
+              <img
+                alt="Test Recipe 2"
+                class="object-cover"
+                data-nimg="fill"
+                decoding="async"
+                loading="lazy"
+                src="logo.svg"
+                style="position: absolute; height: 100%; width: 100%; left: 0px; top: 0px; right: 0px; bottom: 0px; color: transparent;"
+              />
+            </div>
+          </div>
+          <div
+            class="p-4"
+          >
+            <h3
+              class="tracking-tight text-xl font-semibold line-clamp-2"
+            >
+              Test Recipe 2
+            </h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { Recipe } from "../../lib/types";
 import { RecipeCard } from "./RecipeCard";
 import { Input } from "@/components/ui/input";
@@ -21,7 +21,7 @@ export function RecipesGrid({ recipes }: Readonly<Props>) {
 
   return (
     <div>
-      {filteredRecipes ? (
+      {filteredRecipes.length ? (
         <div>
           <div className="relative">
             <Input
