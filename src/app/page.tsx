@@ -15,31 +15,7 @@ export default async function HomePage() {
           recipes!
         </p>
       </div>
-
       <RecipeSearch ingredients={ingredients} />
-
-      {/* {recipes.length > 0 && (
-        <div className="mt-8">
-          <h2 className="text-2xl font-bold mb-4">Found Recipes</h2>
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {recipes.map((recipe, index) => (
-              <Card key={index}>
-                <CardHeader>
-                  <CardTitle>{recipe.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <h4 className="font-semibold">Ingredients:</h4>
-                  <ul className="list-disc list-inside">
-                    {recipe.ingredients.map((ingredient, idx) => (
-                      <li key={idx}>{ingredient}</li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      )} */}
     </main>
   );
 }

@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { useForm, Controller, SubmitHandler } from "react-hook-form";
+import { useForm, Controller, SubmitHandler, useWatch } from "react-hook-form";
 import { Ingredient } from "../../lib/types";
 import { Button } from "../ui/button";
 import Select from "react-select";
@@ -30,22 +30,35 @@ export const IngredientForm = ({
     onSubmit(data.ingredientSearch.label);
   };
 
+  const selectedIngredient = useWatch({
+    control,
+    name: "ingredientSearch",
+  });
+
   return (
-    <form onSubmit={handleSubmit(handles)}>
-      <Controller
-        name="ingredientSearch"
-        control={control}
-        render={({ field }) => (
-          <Select
-            {...field}
-            options={ingredientOptions}
-            placeholder="Search Ingredients"
-            onChange={(selectedOption) => field.onChange(selectedOption)}
-            instanceId="ingredient-select"
-          />
-        )}
-      />
-      <Button type="submit">Submit</Button>
-    </form>
+    <div className="flex justify-center items-center w-full px-4 py-8">
+      <form onSubmit={handleSubmit(handles)} className="w-full max-w-md">
+        <Controller
+          name="ingredientSearch"
+          control={control}
+          render={({ field }) => (
+            <Select
+              {...field}
+              options={ingredientOptions}
+              placeholder="Search Ingredients"
+              onChange={(selectedOption) => field.onChange(selectedOption)}
+              instanceId="ingredient-select"
+            />
+          )}
+        />
+        <Button
+          className="w-full mt-2"
+          type="submit"
+          disabled={!selectedIngredient}
+        >
+          Submit
+        </Button>
+      </form>
+    </div>
   );
 };
