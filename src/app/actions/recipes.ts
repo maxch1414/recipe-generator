@@ -2,10 +2,10 @@
 
 import { Recipe } from "@/lib/types";
 
-const apiUrl = process.env.API_URL;
-
 export async function getRecipes(ingredientId: string) {
-  const response = await fetch(`${apiUrl}/filter.php?i=${ingredientId}`);
+  const response = await fetch(
+    `https://www.themealdb.com/api/json/v1/1/filter.php?i=${ingredientId}`
+  );
 
   if (!response.ok) {
     throw new Error("Failed to fetch recipes");
