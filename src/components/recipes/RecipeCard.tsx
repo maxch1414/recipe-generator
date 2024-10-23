@@ -1,12 +1,5 @@
 import React from "react";
-import {
-  Card,
-  CardHeader,
-  CardTitle,
-  CardContent,
-  //   CardDescription,
-  //   CardFooter,
-} from "@/components/ui/card";
+import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Recipe } from "@/lib/types";
 import Image from "next/image";
 
@@ -15,7 +8,6 @@ type Props = {
 };
 
 export const RecipeCard = ({ recipe }: Props) => {
-  console.log(recipe);
   return (
     <Card className="overflow-hidden">
       <CardHeader className="p-0">
