@@ -27,7 +27,7 @@ test("Renders a ingredient form correctly", async () => {
 
   handleSubmit.mockResolvedValueOnce(mockRecipes);
 
-  expect(handleSubmit).toHaveBeenCalledWith(mockIngredients[0].strIngredient);
+  expect(handleSubmit).toHaveBeenCalledWith([mockIngredients[0].strIngredient]);
 
   expect(container).toMatchSnapshot();
 });

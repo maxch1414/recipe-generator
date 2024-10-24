@@ -8,7 +8,7 @@ import {
 import { expect, test, vi } from "vitest";
 import Home from "@/app/page";
 import { mockIngredients } from "@/__tests__/mocks/data/ingredients";
-import { mockRecipes } from "../mocks/data/recipes";
+import { mockFullRecipes } from "../mocks/data/recipes";
 import * as ingredientActions from "@/app/actions/ingredients";
 import * as recipeActions from "@/app/actions/recipes";
 
@@ -17,7 +17,9 @@ test("Renders the HomePage and interacts with it", async () => {
     mockIngredients
   );
 
-  vi.spyOn(recipeActions, "getRecipes").mockResolvedValue(mockRecipes);
+  vi.spyOn(recipeActions, "fetchFilteredRecipes").mockResolvedValue(
+    mockFullRecipes
+  );
 
   render(await Home());
 

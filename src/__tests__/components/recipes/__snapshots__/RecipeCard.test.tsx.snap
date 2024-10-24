@@ -3,7 +3,7 @@
 exports[`Renders a recipe card correctly 1`] = `
 <div>
   <div
-    class="rounded-xl border bg-card text-card-foreground shadow overflow-hidden"
+    class="rounded-xl border bg-card text-card-foreground shadow overflow-hidden cursor-pointer"
     role="griditem"
   >
     <div

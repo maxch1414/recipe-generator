@@ -8,11 +8,11 @@ import Select from "react-select";
 
 type IngredientFormProps = {
   ingredients: Ingredient[];
-  onSubmit: (ingredientId: string) => void;
+  onSubmit: (ingredientIds: string[]) => void;
 };
 
 type FormValues = {
-  ingredientSearch: { label: string };
+  ingredientSearch: { label: string }[];
 };
 
 export const IngredientForm = ({
@@ -27,7 +27,18 @@ export const IngredientForm = ({
   }));
 
   const handleFormSubmit: SubmitHandler<FormValues> = (data) => {
-    onSubmit(data.ingredientSearch.label);
+    const selectedIngredients = data.ingredientSearch.map(
+      (ingredient) => ingredient.label
+    );
+    // const ingredientsArray = [
+    //   "Filo Pastry",
+    //   "Minced Beef",
+    //   "Onion",
+    //   "Oil",
+    //   "Salt",
+    //   "Pepper",
+    // ];
+    onSubmit(selectedIngredients);
   };
 
   const selectedIngredient = useWatch({
@@ -47,6 +58,8 @@ export const IngredientForm = ({
           render={({ field }) => (
             <Select
               {...field}
+              className="dark:text-black"
+              isMulti={true}
               options={ingredientOptions}
               placeholder="Search Ingredient"
               onChange={(selectedOption) => field.onChange(selectedOption)}

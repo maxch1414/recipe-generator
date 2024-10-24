@@ -1,22 +1,28 @@
 "use client";
 
 import React, { useState } from "react";
-import { Ingredient, Recipe } from "../../lib/types";
+import { FullRecipe, Ingredient } from "../../lib/types";
 import { IngredientForm } from "../forms/IngredientForm";
 import { RecipesGrid } from "./RecipesGrid";
-import { getRecipes } from "@/app/actions/recipes";
+import { fetchFilteredRecipes } from "@/app/actions/recipes";
 
 type RecipeSearchProps = {
   ingredients: Ingredient[];
 };
 
 export const RecipeSearch = ({ ingredients }: RecipeSearchProps) => {
-  const [recipes, setRecipes] = useState<Recipe[]>([]);
+  const [recipes, setRecipes] = useState<FullRecipe[]>([]);
 
-  const fetchRecipes = async (ingredientId: string) => {
+  const fetchRecipes = async (ingredientIds: string[]) => {
     try {
-      const recipes = await getRecipes(ingredientId);
-      setRecipes(recipes);
+      const recipes = await fetchFilteredRecipes(ingredientIds);
+      const validRecipes: FullRecipe[] = recipes.map((recipe) => ({
+        ...recipe,
+        ingredients: recipe.ingredients.filter(
+          (ingredient): ingredient is string => ingredient !== undefined
+        ),
+      }));
+      setRecipes(validRecipes);
     } catch (error) {
       console.error("Error fetching recipes:", error);
     }

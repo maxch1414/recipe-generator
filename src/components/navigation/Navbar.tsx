@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import Link from "next/link";
 import { Button } from "../ui/button";
 import {
@@ -7,14 +9,16 @@ import {
   SheetContent,
   SheetHeader,
   SheetTitle,
-  SheetDescription,
 } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
 import Image from "next/image";
+import { ThemeToggle } from "../ThemeToggle";
 
 export function Navbar() {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
-    <header className="bg-primary text-primary-foreground">
+    <header className="bg-primary">
       <div className="container mx-auto px-4">
         <nav className="flex items-center justify-between py-4">
           <Link href="/" className="text-2xl font-bold flex items-center">
@@ -27,7 +31,7 @@ export function Navbar() {
             />
             Recipe Finder
           </Link>
-          <ul className="hidden md:flex space-x-6">
+          <ul className="hidden md:flex space-x-6 items-center">
             <li>
               <Link href="/about" className="hover:underline">
                 About
@@ -38,26 +42,45 @@ export function Navbar() {
                 Contact
               </Link>
             </li>
+            <li>
+              <div className="flex items-center">
+                <ThemeToggle />
+              </div>
+            </li>
           </ul>
-          <Sheet>
+          <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild>
               <Button variant="outline" size="icon" className="md:hidden">
                 <Menu className="h-6 w-6" />
                 <span className="sr-only">Open menu</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side="right">
+            <SheetContent side="left">
               <SheetHeader>
-                <SheetTitle>Menu</SheetTitle>
-                <SheetDescription>Navigate through our app</SheetDescription>
+                <SheetTitle className="text-2xl">
+                  <Link href="/" onClick={() => setIsOpen(false)}>
+                    Recipe Finder
+                  </Link>
+                </SheetTitle>
               </SheetHeader>
               <nav className="flex flex-col space-y-4 mt-4">
-                <Link href="/about" className="hover:underline">
+                <Link
+                  href="/about"
+                  className="hover:underline"
+                  onClick={() => setIsOpen(false)}
+                >
                   About
                 </Link>
-                <Link href="/contact" className="hover:underline">
+                <Link
+                  href="/contact"
+                  className="hover:underline"
+                  onClick={() => setIsOpen(false)}
+                >
                   Contact
                 </Link>
+                <div className="flex items-center">
+                  <ThemeToggle />
+                </div>
               </nav>
             </SheetContent>
           </Sheet>
