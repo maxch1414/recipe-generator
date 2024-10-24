@@ -24,7 +24,7 @@ export function RecipeModal({ recipe, open, setOpen }: Readonly<Props>) {
     return Array.from({ length: 20 }, (_, i) => i + 1).map((num) => {
       const ingredient = recipe[`strIngredient${num}` as keyof FullRecipe];
       const measure = recipe[`strMeasure${num}` as keyof FullRecipe];
-      if (ingredient && ingredient.trim() !== "") {
+      if (ingredient && ingredient.toString().trim() !== "") {
         return (
           <li key={num} className="mb-1">
             {ingredient}: {measure}
@@ -37,14 +37,14 @@ export function RecipeModal({ recipe, open, setOpen }: Readonly<Props>) {
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>
-      <DialogContent className="sm:max-w-[600px] max-h-[90vh]">
+      <DialogContent className="max-w-[60vw] max-h-[90vh]">
         <DialogHeader>
           <DialogTitle className="text-2xl font-bold">
             {recipe.strMeal}
           </DialogTitle>
         </DialogHeader>
         <DialogDescription>ID: {recipe.idMeal}</DialogDescription>
-        <ScrollArea className="pr-4 max-h-[calc(90vh-120px)]">
+        <ScrollArea className="pr-4 max-h-[calc(75vh-120px)]">
           <div className="space-y-6">
             <div className="relative h-48 w-full">
               <Image

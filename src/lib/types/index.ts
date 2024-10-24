@@ -12,6 +12,7 @@ export type Recipe = {
 };
 
 export type FullRecipe = {
+  ingredients?: string[];
   idMeal: string;
   strMeal: string;
   strDrinkAlternate: string | null;

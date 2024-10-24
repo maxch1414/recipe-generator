@@ -10,7 +10,7 @@ exports[`Renders a recipe search correctly 1`] = `
         class="w-full max-w-md"
       >
         <div
-          class="css-b62m3t-container"
+          class="dark:text-black css-b62m3t-container"
         >
           <span
             class="css-1f43avz-a11yText-A11yText"
@@ -27,12 +27,34 @@ exports[`Renders a recipe search correctly 1`] = `
             class="css-13cymwt-control"
           >
             <div
-              class="css-hlgwow"
+              class="css-1dyz3mf"
             >
               <div
-                class="css-1dimb5e-singleValue"
+                class="css-1p3m7a8-multiValue"
               >
-                Test Ingredient
+                <div
+                  class="css-9jq23d"
+                >
+                  Test Ingredient
+                </div>
+                <div
+                  aria-label="Remove Test Ingredient"
+                  class="css-v7duua"
+                  role="button"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="css-tj5bde-Svg"
+                    focusable="false"
+                    height="14"
+                    viewBox="0 0 20 20"
+                    width="14"
+                  >
+                    <path
+                      d="M14.348 14.849c-0.469 0.469-1.229 0.469-1.697 0l-2.651-3.030-2.651 3.029c-0.469 0.469-1.229 0.469-1.697 0-0.469-0.469-0.469-1.229 0-1.697l2.758-3.15-2.759-3.152c-0.469-0.469-0.469-1.228 0-1.697s1.228-0.469 1.697 0l2.652 3.031 2.651-3.031c0.469-0.469 1.228-0.469 1.697 0s0.469 1.229 0 1.697l-2.758 3.152 2.758 3.15c0.469 0.469 0.469 1.229 0 1.698z"
+                    />
+                  </svg>
+                </div>
               </div>
               <div
                 class="css-19bb58m"
@@ -50,7 +72,7 @@ exports[`Renders a recipe search correctly 1`] = `
                   id="react-select-ingredient-select-input"
                   role="combobox"
                   spellcheck="false"
-                  style="opacity: 0; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
+                  style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
                   tabindex="0"
                   type="text"
                   value=""
@@ -60,6 +82,23 @@ exports[`Renders a recipe search correctly 1`] = `
             <div
               class="css-1wy0on6"
             >
+              <div
+                aria-hidden="true"
+                class="css-1xc3v61-indicatorContainer"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="css-tj5bde-Svg"
+                  focusable="false"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  width="20"
+                >
+                  <path
+                    d="M14.348 14.849c-0.469 0.469-1.229 0.469-1.697 0l-2.651-3.030-2.651 3.029c-0.469 0.469-1.229 0.469-1.697 0-0.469-0.469-0.469-1.229 0-1.697l2.758-3.15-2.759-3.152c-0.469-0.469-0.469-1.228 0-1.697s1.228-0.469 1.697 0l2.652 3.031 2.651-3.031c0.469-0.469 1.228-0.469 1.697 0s0.469 1.229 0 1.697l-2.758 3.152 2.758 3.15c0.469 0.469 0.469 1.229 0 1.698z"
+                  />
+                </svg>
+              </div>
               <span
                 class="css-1u9des2-indicatorSeparator"
               />
@@ -82,11 +121,13 @@ exports[`Renders a recipe search correctly 1`] = `
               </div>
             </div>
           </div>
-          <input
-            name="ingredientSearch"
-            type="hidden"
-            value="1"
-          />
+          <div>
+            <input
+              name="ingredientSearch"
+              type="hidden"
+              value="1"
+            />
+          </div>
         </div>
         <button
           class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-primary-foreground shadow hover:bg-primary/90 h-9 px-4 py-2 w-full mt-2"
@@ -136,7 +177,7 @@ exports[`Renders a recipe search correctly 1`] = `
             class="mt-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
           >
             <div
-              class="rounded-xl border bg-card text-card-foreground shadow overflow-hidden"
+              class="rounded-xl border bg-card text-card-foreground shadow overflow-hidden cursor-pointer"
               role="griditem"
             >
               <div
@@ -146,12 +187,14 @@ exports[`Renders a recipe search correctly 1`] = `
                   class="relative h-48 w-full"
                 >
                   <img
-                    alt="Test Recipe"
+                    alt="Roti john"
                     class="object-cover"
                     data-nimg="fill"
                     decoding="async"
                     loading="lazy"
-                    src="logo.svg"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    src="/_next/image?url=https%3A%2F%2Fwww.themealdb.com%2Fimages%2Fmedia%2Fmeals%2Fhx335q1619789561.jpg&w=3840&q=75"
+                    srcset="/_next/image?url=https%3A%2F%2Fwww.themealdb.com%2Fimages%2Fmedia%2Fmeals%2Fhx335q1619789561.jpg&w=256&q=75 256w, /_next/image?url=https%3A%2F%2Fwww.themealdb.com%2Fimages%2Fmedia%2Fmeals%2Fhx335q1619789561.jpg&w=384&q=75 384w, /_next/image?url=https%3A%2F%2Fwww.themealdb.com%2Fimages%2Fmedia%2Fmeals%2Fhx335q1619789561.jpg&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fwww.themealdb.com%2Fimages%2Fmedia%2Fmeals%2Fhx335q1619789561.jpg&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fwww.themealdb.com%2Fimages%2Fmedia%2Fmeals%2Fhx335q1619789561.jpg&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fwww.themealdb.com%2Fimages%2Fmedia%2Fmeals%2Fhx335q1619789561.jpg&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fwww.themealdb.com%2Fimages%2Fmedia%2Fmeals%2Fhx335q1619789561.jpg&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fwww.themealdb.com%2Fimages%2Fmedia%2Fmeals%2Fhx335q1619789561.jpg&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fwww.themealdb.com%2Fimages%2Fmedia%2Fmeals%2Fhx335q1619789561.jpg&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fwww.themealdb.com%2Fimages%2Fmedia%2Fmeals%2Fhx335q1619789561.jpg&w=3840&q=75 3840w"
                     style="position: absolute; height: 100%; width: 100%; left: 0px; top: 0px; right: 0px; bottom: 0px; color: transparent;"
                   />
                 </div>
@@ -162,12 +205,12 @@ exports[`Renders a recipe search correctly 1`] = `
                 <h3
                   class="tracking-tight text-xl font-semibold line-clamp-2"
                 >
-                  Test Recipe
+                  Roti john
                 </h3>
               </div>
             </div>
             <div
-              class="rounded-xl border bg-card text-card-foreground shadow overflow-hidden"
+              class="rounded-xl border bg-card text-card-foreground shadow overflow-hidden cursor-pointer"
               role="griditem"
             >
               <div
@@ -177,12 +220,14 @@ exports[`Renders a recipe search correctly 1`] = `
                   class="relative h-48 w-full"
                 >
                   <img
-                    alt="Test Recipe 2"
+                    alt="Eton Mess"
                     class="object-cover"
                     data-nimg="fill"
                     decoding="async"
                     loading="lazy"
-                    src="logo.svg"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    src="/_next/image?url=https%3A%2F%2Fwww.themealdb.com%2Fimages%2Fmedia%2Fmeals%2Fuuxwvq1483907861.jpg&w=3840&q=75"
+                    srcset="/_next/image?url=https%3A%2F%2Fwww.themealdb.com%2Fimages%2Fmedia%2Fmeals%2Fuuxwvq1483907861.jpg&w=256&q=75 256w, /_next/image?url=https%3A%2F%2Fwww.themealdb.com%2Fimages%2Fmedia%2Fmeals%2Fuuxwvq1483907861.jpg&w=384&q=75 384w, /_next/image?url=https%3A%2F%2Fwww.themealdb.com%2Fimages%2Fmedia%2Fmeals%2Fuuxwvq1483907861.jpg&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fwww.themealdb.com%2Fimages%2Fmedia%2Fmeals%2Fuuxwvq1483907861.jpg&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fwww.themealdb.com%2Fimages%2Fmedia%2Fmeals%2Fuuxwvq1483907861.jpg&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fwww.themealdb.com%2Fimages%2Fmedia%2Fmeals%2Fuuxwvq1483907861.jpg&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fwww.themealdb.com%2Fimages%2Fmedia%2Fmeals%2Fuuxwvq1483907861.jpg&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fwww.themealdb.com%2Fimages%2Fmedia%2Fmeals%2Fuuxwvq1483907861.jpg&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fwww.themealdb.com%2Fimages%2Fmedia%2Fmeals%2Fuuxwvq1483907861.jpg&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fwww.themealdb.com%2Fimages%2Fmedia%2Fmeals%2Fuuxwvq1483907861.jpg&w=3840&q=75 3840w"
                     style="position: absolute; height: 100%; width: 100%; left: 0px; top: 0px; right: 0px; bottom: 0px; color: transparent;"
                   />
                 </div>
@@ -193,7 +238,7 @@ exports[`Renders a recipe search correctly 1`] = `
                 <h3
                   class="tracking-tight text-xl font-semibold line-clamp-2"
                 >
-                  Test Recipe 2
+                  Eton Mess
                 </h3>
               </div>
             </div>

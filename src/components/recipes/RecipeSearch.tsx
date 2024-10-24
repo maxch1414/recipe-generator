@@ -15,8 +15,14 @@ export const RecipeSearch = ({ ingredients }: RecipeSearchProps) => {
 
   const fetchRecipes = async (ingredientIds: string[]) => {
     try {
-      const recipes: FullRecipe[] = await fetchFilteredRecipes(ingredientIds);
-      setRecipes(recipes);
+      const recipes = await fetchFilteredRecipes(ingredientIds);
+      const validRecipes: FullRecipe[] = recipes.map((recipe) => ({
+        ...recipe,
+        ingredients: recipe.ingredients.filter(
+          (ingredient): ingredient is string => ingredient !== undefined
+        ),
+      }));
+      setRecipes(validRecipes);
     } catch (error) {
       console.error("Error fetching recipes:", error);
     }

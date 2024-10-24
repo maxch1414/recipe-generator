@@ -39,7 +39,7 @@ exports[`Renders the recipes grid correctly 1`] = `
         class="mt-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
       >
         <div
-          class="rounded-xl border bg-card text-card-foreground shadow overflow-hidden"
+          class="rounded-xl border bg-card text-card-foreground shadow overflow-hidden cursor-pointer"
           role="griditem"
         >
           <div
@@ -70,7 +70,7 @@ exports[`Renders the recipes grid correctly 1`] = `
           </div>
         </div>
         <div
-          class="rounded-xl border bg-card text-card-foreground shadow overflow-hidden"
+          class="rounded-xl border bg-card text-card-foreground shadow overflow-hidden cursor-pointer"
           role="griditem"
         >
           <div

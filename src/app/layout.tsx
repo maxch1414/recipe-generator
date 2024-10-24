@@ -17,12 +17,7 @@ const geistMono = localFont({
   weight: "100 900",
 });
 
-const defaultUrl = process.env.VERCEL_URL
-  ? `https://${process.env.VERCEL_URL}`
-  : "http://localhost:3000";
-
 export const metadata: Metadata = {
-  metadataBase: new URL(defaultUrl),
   title: "Recipe Generator",
   description: "Find recipes based on the ingredients you have in your fridge!",
   icons: {

@@ -9,13 +9,13 @@ import {
 } from "@testing-library/react";
 import { RecipeSearch } from "@/components/recipes/RecipeSearch";
 import { mockIngredients } from "@/__tests__/mocks/data/ingredients";
-import { mockRecipes } from "@/__tests__/mocks/data/recipes";
+import { mockFullRecipes } from "@/__tests__/mocks/data/recipes";
 import * as recipeActions from "@/app/actions/recipes";
 
 test("Renders a recipe search correctly", async () => {
   const fetchRecipes = vi
-    .spyOn(recipeActions, "getRecipes")
-    .mockResolvedValue(mockRecipes);
+    .spyOn(recipeActions, "fetchFilteredRecipes")
+    .mockResolvedValue(mockFullRecipes);
 
   const { container } = render(<RecipeSearch ingredients={mockIngredients} />);
 

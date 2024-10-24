@@ -70,7 +70,9 @@ export const fetchFilteredRecipes = async (ingredientList: string[]) => {
             (key) =>
               key.startsWith("strIngredient") && meal[key as keyof FullRecipe]
           )
-          .map((key) => meal[key as keyof FullRecipe]?.toLowerCase());
+          .map((key) =>
+            meal[key as keyof FullRecipe]?.toString().toLowerCase()
+          );
 
         return { ...recipe, ingredients };
       })
