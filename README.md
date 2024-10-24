@@ -1,3 +1,5 @@
+![Static Badge](https://img.shields.io/badge/:badgeContent)
+
 What I was thinking on creation,
 
 Should I handle this in different pages or should I handle this on 1 page with a split of server and client components?
