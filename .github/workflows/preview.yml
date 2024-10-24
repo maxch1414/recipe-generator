@@ -1,5 +1,9 @@
 name: CI/CD Preview
 
+permissions:
+  checks: write
+  pull-requests: write
+
 env:
   NODE_VERSION: 20
   VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
@@ -11,23 +15,23 @@ on:
 
 jobs:
   Test:
-    name: Test
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout branch
+        uses: actions/checkout@v4
 
-      - name: Use Node.js ${{ env.NODE_VERSION }}
+      - name: Use Node ${{ env.NODE_VERSION }}
         uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
 
-      - name: Install Bun
+      - name: Bun Install
         run: npm install -g bun
 
-      - name: Install dependencies
+      - name: Bun Install
         run: bun install
 
-      - name: Test project
+      - name: Run unit tests
         run: bun run test:ci
 
       - name: Publish Test Results
