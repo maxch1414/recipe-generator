@@ -104,7 +104,7 @@ jobs:
 
       - name: Deploy Project Artifacts to Vercel
         shell: bash
-        run: vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }} | tee deploy.log
+        run: vercel deploy --token=${{ secrets.VERCEL_TOKEN }} | tee deploy.log
 
       - id: seturl
         name: Set preview url
