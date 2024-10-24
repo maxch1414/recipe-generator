@@ -1,0 +1,114 @@
+name: CI/CD Preview
+
+permissions:
+  checks: write
+  pull-requests: write
+
+env:
+  NODE_VERSION: 20
+  VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+  VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+
+jobs:
+  Test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout branch
+        uses: actions/checkout@v4
+
+      - name: Use Node ${{ env.NODE_VERSION }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: Bun Install
+        run: npm install -g bun
+
+      - name: Bun Install
+        run: bun install
+
+      - name: Run unit tests
+        run: bun run test:ci
+
+      - name: Publish Test Results
+        uses: EnricoMi/publish-unit-test-result-action@v2
+        if: always()
+        with:
+          files: coverage/junit-report.xml
+
+      - name: Publish Code Coverage
+        uses: irongut/CodeCoverageSummary@v1.3.0
+        with:
+          filename: coverage/**/cobertura-coverage.xml
+          badge: true
+
+  Build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Use Node.js ${{ env.NODE_VERSION }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: Install Bun
+        run: npm install -g bun
+
+      - name: Install Vercel CLI
+        run: bun install -g vercel@canary
+
+      - name: Pull Vercel Environment Information
+        run: vercel pull --yes --environment=preview --token=${{ secrets.VERCEL_TOKEN }}
+
+      - name: Build Project Artifacts
+        run: vercel build --token=${{ secrets.VERCEL_TOKEN }}
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: build
+          path: .vercel/output
+
+  Deploy:
+    needs: [Test, Build]
+    name: Deploy to preview
+    runs-on: ubuntu-latest
+    environment:
+      name: preview
+      url: ${{ steps.seturl.outputs.url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Use Node.js ${{ env.NODE_VERSION }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: Install Bun
+        run: npm install -g bun
+
+      - name: Download build artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: build
+          path: .vercel/output/
+
+      - name: Install Vercel CLI
+        run: bun install -g vercel@canary
+
+      - name: Deploy Project Artifacts to Vercel
+        shell: bash
+        run: vercel deploy --token=${{ secrets.VERCEL_TOKEN }} | tee deploy.log
+
+      - id: seturl
+        name: Set preview url
+        run: echo "url=$(tail -1 deploy.log)">> $GITHUB_OUTPUT
+
+      - name: Output preview url
+        run: echo "${{ steps.seturl.outputs.url }}"
