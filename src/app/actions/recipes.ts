@@ -78,11 +78,20 @@ export const fetchFilteredRecipes = async (ingredientList: string[]) => {
       })
     );
 
+    // const filteredRecipes = recipesWithIngredients.filter((recipe) =>
+    //   ingredientList.every((ingredient) =>
+    //     recipe.ingredients.includes(ingredient.toLowerCase())
+    //   )
+    // );
+
     const filteredRecipes = recipesWithIngredients.filter((recipe) =>
-      ingredientList.every((ingredient) =>
-        recipe.ingredients.includes(ingredient.toLowerCase())
+      recipe.ingredients.every((ingredient) =>
+        ingredientList
+          .map((i) => i.toLowerCase())
+          .includes(ingredient!.toLowerCase())
       )
     );
+
     console.log(filteredRecipes);
     return filteredRecipes;
   } catch (error) {

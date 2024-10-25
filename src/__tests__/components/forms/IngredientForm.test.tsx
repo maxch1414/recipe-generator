@@ -12,7 +12,7 @@ test("Renders a ingredient form correctly", async () => {
     <IngredientForm ingredients={mockIngredients} onSubmit={handleSubmit} />
   );
 
-  const ingredientSelect = screen.getByText("Search Ingredient");
+  const ingredientSelect = screen.getByText("Search Ingredients");
   fireEvent.click(ingredientSelect);
   fireEvent.keyDown(ingredientSelect, { key: "ArrowDown" });
   fireEvent.keyDown(ingredientSelect, {

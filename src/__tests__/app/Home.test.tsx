@@ -24,11 +24,11 @@ test("Renders the HomePage and interacts with it", async () => {
   render(await Home());
 
   const heading = screen.getByRole("heading", {
-    name: /find recipes with your main ingredient/i,
+    name: /enter the ingredients in your fridge and discover delicious recipes!/i,
   });
   expect(heading).toBeInTheDocument();
 
-  const ingredientSelect = screen.getByText("Search Ingredient");
+  const ingredientSelect = screen.getByText("Search Ingredients");
   fireEvent.click(ingredientSelect);
   fireEvent.keyDown(ingredientSelect, { key: "ArrowDown" });
   fireEvent.keyDown(ingredientSelect, {

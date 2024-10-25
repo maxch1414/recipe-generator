@@ -8,13 +8,10 @@ export default async function Home() {
   return (
     <main className="container mx-auto px-4 py-8">
       <div className="max-w-2xl mx-auto text-center mb-8">
-        <h1 className="text-3xl font-bold mb-2">
-          Find Recipes with Your Main Ingredient
-        </h1>
-        <p className="text-muted-foreground">
-          Enter the main ingredient you have on hand and discover delicious
-          recipes!
-        </p>
+        <h1 className="text-3xl font-bold mb-2">Find Recipes</h1>
+        <h3 className="text-muted-foreground">
+          Enter the ingredients in your fridge and discover delicious recipes!
+        </h3>
       </div>
       <RecipeSearch ingredients={ingredients} />
     </main>
