@@ -19,7 +19,7 @@ test("Renders a recipe search correctly", async () => {
 
   const { container } = render(<RecipeSearch ingredients={mockIngredients} />);
 
-  const ingredientSelect = screen.getByText("Search Ingredient");
+  const ingredientSelect = screen.getByText("Search Ingredients");
   fireEvent.click(ingredientSelect);
   fireEvent.keyDown(ingredientSelect, { key: "ArrowDown" });
   fireEvent.keyDown(ingredientSelect, {
