@@ -30,14 +30,6 @@ export const IngredientForm = ({
     const selectedIngredients = data.ingredientSearch.map(
       (ingredient) => ingredient.label
     );
-    // const ingredientsArray = [
-    //   "Filo Pastry",
-    //   "Minced Beef",
-    //   "Onion",
-    //   "Oil",
-    //   "Salt",
-    //   "Pepper",
-    // ];
     onSubmit(selectedIngredients);
   };
 
@@ -61,7 +53,7 @@ export const IngredientForm = ({
               className="dark:text-black"
               isMulti={true}
               options={ingredientOptions}
-              placeholder="Search Ingredient"
+              placeholder="Search Ingredients"
               onChange={(selectedOption) => field.onChange(selectedOption)}
               instanceId="ingredient-select"
             />
